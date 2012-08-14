@@ -1,8 +1,20 @@
-(global-set-key (kbd "C-,") '(lambda () ;;   "comment or uncomment current line"
+(global-set-key (kbd "C-ò") '(lambda () ;; comment or uncomment current line/region
   (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-  )
+  (let (beg end)
+	(if (region-active-p)
+	    (setq beg (region-beginning) end (region-end))
+	    (setq beg (line-beginning-position) end (line-end-position)))
+  (comment-or-uncomment-region beg end))
+  (if (region-active-p)
+      (setq deactivate-mark nil))
+))
+
+(global-set-key (kbd "C-S-u") '(lambda () ; comment/uncomment region
+    (interactive)
+    (comment-or-uncomment-region  (region-beginning) (region-end))
+    (setq deactivate-mark nil))
 )
+
 
 ;; clipboard integration with X
 (setq x-select-enable-clipboard t)
@@ -46,14 +58,3 @@
 
 (global-set-key (kbd "TAB") 'tab-indent-region)
 (global-set-key (kbd "<backtab>") 'unindent-region)
-
-(global-set-key (kbd "C-S-u") '(lambda () ; comment region
-    (interactive)
-    (comment-region  (region-beginning) (region-end))
-    (setq deactivate-mark nil))
-)
-(global-set-key (kbd "C-S-i") '(lambda () ; uncomment region
-    (interactive)
-    (uncomment-region  (region-beginning) (region-end))
-    (setq deactivate-mark nil))
-)

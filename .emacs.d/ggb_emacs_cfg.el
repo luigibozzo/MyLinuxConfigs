@@ -2,6 +2,8 @@
 (load "ggb_editing")
 (load "ggb_display_opts")
 
+(add-to-list 'load-path "expand-region")
+(load "expand-region")
 (setq c-basic-offset 4) ;; tab is multiple of 4
 
 
