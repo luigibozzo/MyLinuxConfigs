@@ -1,5 +1,6 @@
 /*
 !/.emacs*
+!/.gitsubmodules
 /.emacs.d/session.*
 !.gitignore
 !.profile
