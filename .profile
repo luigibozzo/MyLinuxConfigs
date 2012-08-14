@@ -21,7 +21,7 @@ fi
 ############################################################
 
 function conditionally_prefix_path {
-  local dir=$1
+  dir=$1
   if [ -d $dir ]; then
     PATH="$dir:${PATH}"
   fi
