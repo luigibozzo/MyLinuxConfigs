@@ -20,16 +20,15 @@ fi
 ## PATH
 ############################################################
 
-function conditionally_prefix_path {
-  dir=$1
-  if [ -d $dir ]; then
-    PATH="$dir:${PATH}"
+conditionally_prefix_path() {
+  if [ -d $1 ]; then
+    PATH="$1:${PATH}"
   fi
 }
 
 conditionally_prefix_path "$HOME/bin"
 conditionally_prefix_path "$HOME/.myBin"
 conditionally_prefix_path "/usr/local/jre1.7/bin"
-conditionally_prefix_path "~/.cabal/bin"
+conditionally_prefix_path "$HOME/.cabal/bin"
 
 export classpath=~/local/clojure-1.4.0/clojure-1.4.0.jar

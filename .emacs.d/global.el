@@ -33,7 +33,7 @@
 (set-default 'indicate-empty-lines t)
 
 ;; Line-wrapping
-;; (set-default 'fill-column 78)
+(set-default 'fill-column 90)
 
 ;; Prevent the annoying beep on errors
 (setq visible-bell t)
@@ -52,7 +52,7 @@
 (server-start)
 
 ;; Trailing whitespace is unnecessary
-(add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
+;; (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
 
 ;; Trash can support
 ; (setq delete-by-moving-to-trash t) ; check how to use

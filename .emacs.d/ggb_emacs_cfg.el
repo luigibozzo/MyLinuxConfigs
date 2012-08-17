@@ -1,30 +1,33 @@
 (load "global")
 (load "ggb_editing")
-(load "ggb_display_opts")
+(load "ggb_display_opts") 
 
-(add-to-list 'load-path "expand-region")
-(load "expand-region")
 (setq c-basic-offset 4) ;; tab is multiple of 4
 
 
 
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-(when
-(load
-(expand-file-name "~/.emacs.d/elpa/package.el"))
-(package-initialize))
+;;; Move this code earlier if you want to reference packages in your .emacs.
+;; (when (load (expand-file-name "~/.emacs.d/elpa/package.el"))
+;;   (package-initialize))
 
-(require 'package)
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-("gnu" . "http://elpa.gnu.org/packages/")
-("marmalade" . "http://marmalade-repo.org/packages/")))
-(package-initialize)
+;; (require 'package)
+;; (setq package-archives '(
+;;   ("ELPA" . "http://tromey.com/elpa/")
+;;   ("gnu" . "http://elpa.gnu.org/packages/")
+;;   ("marmalade" . "http://marmalade-repo.org/packages/")))
+;; (package-initialize)
 
 ;; haskell
+(add-to-list 'load-path ".emacs.d/haskell-mode")
 (load "haskell-mode/haskell-site-file")
+;; (add-hook 'haskell-mode-hook 'turn-on-font-lock)       
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)  
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)    
+;; ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;; (add-hook 'haskell-mode-hook 'haskell-refac-mode)      
+;; (add-hook 'haskell-mode-hook 'hs-lint-mode-hook)       
 
 ;; (remove-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;; (remove-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
@@ -63,4 +66,5 @@
 (global-set-key (kbd "<C-S-iso-lefttab>") 'unbury-buffer)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key [(shift f1)] 'call-last-kbd-macro)
-(define-key global-map "\C-h" 'backward-delete-char)
+(define-key global-map "\C-h" 'backward-delete-char) 
+
