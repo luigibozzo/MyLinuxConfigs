@@ -4,3 +4,9 @@
 [submodule ".emacs.d/expand-region"]
 	path = .emacs.d/expand-region
 	url = https://github.com/magnars/expand-region.el
+[submodule ".emacs.d/ghc-mod"]
+	path = .emacs.d/ghc-mod
+	url = git://github.com/kazu-yamamoto/ghc-mod.git
+[submodule ".emacs.d/clojure-mode"]
+	path = .emacs.d/clojure-mode
+	url = git://github.com/technomancy/clojure-mode.git

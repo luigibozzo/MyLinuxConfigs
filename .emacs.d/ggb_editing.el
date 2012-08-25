@@ -4,6 +4,8 @@
 ;; (require 'expand-region)
 ;; (global-set-key (kbd "C-à") 'er/expand-region)
 
+(define-key global-map "\C-h" 'backward-delete-char) 
+
 (global-set-key (kbd "C-ò") '(lambda () ;; comment or uncomment current line/region
   (interactive)
   (let (beg end)
@@ -44,6 +46,8 @@
     (popup-menu 'yank-menu))
 )
 
+(global-set-key (kbd "C--") 'undo)
+
 (defun unindent-region ()
     (interactive)
     (indent-region (region-beginning) (region-end) -1)
@@ -56,8 +60,19 @@
     (setq deactivate-mark nil)
 )
 
-(global-set-key (kbd "TAB") 'tab-indent-region)
+;; (global-set-key (kbd "TAB") '(lambda () 
+;;     (interactive)
+;;     ;; (if (region-active-p)
+;;         ;; (tab-indent-region)
+;;         (dabbrev-expand)
+;; ;; )
+;; ))
+
+
+
 (global-set-key (kbd "<backtab>") 'unindent-region)
 
 (cua-mode t)
 (cua-selection-mode t)
+
+(global-set-key (kbd "M--") 'dabbrev-expand)

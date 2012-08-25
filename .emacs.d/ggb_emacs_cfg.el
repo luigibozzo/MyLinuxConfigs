@@ -1,6 +1,7 @@
 (load "global")
 (load "ggb_editing")
 (load "ggb_display_opts") 
+(load "ggb_navigation")
 
 (setq c-basic-offset 4) ;; tab is multiple of 4
 
@@ -13,17 +14,17 @@
 ;;   (package-initialize))
 
 ;; (require 'package)
-;; (setq package-archives '(
-;;   ("ELPA" . "http://tromey.com/elpa/")
-;;   ("gnu" . "http://elpa.gnu.org/packages/")
-;;   ("marmalade" . "http://marmalade-repo.org/packages/")))
+;;  (setq package-archives '(
+;;    ("ELPA" . "http://tromey.com/elpa/")
+;;    ("gnu" . "http://elpa.gnu.org/packages/")
+;;    ("marmalade" . "http://marmalade-repo.org/packages/")))
 ;; (package-initialize)
 
 ;; haskell
-(add-to-list 'load-path ".emacs.d/haskell-mode")
-(load "haskell-mode/haskell-site-file")
+;; (add-to-list 'load-path ".emacs.d/haskell-mode")
+;; (load "haskell-mode/haskell-site-file")
 ;; (add-hook 'haskell-mode-hook 'turn-on-font-lock)       
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)  
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)  
 ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)    
 ;; ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 ;; (add-hook 'haskell-mode-hook 'haskell-refac-mode)      
@@ -37,6 +38,13 @@
 ;;    (haskell-indent-mode 1)       ;; turn on indent-mode
 ;;    )
 
+
+(add-to-list 'load-path "~/.emacs.d/ghc-mod")
+(autoload 'ghc-init "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
+(add-to-list 'load-path "~/.emacs.d/clojure-mode")
+(load "clojure-mode")
 
 (require 'recentf)
 (recentf-mode 1)
@@ -58,13 +66,11 @@
 (ido-mode 1)
 (setq ido-file-extensions-order '(".hs" ".clj" ".txt" ".py" ".emacs" ".xml" ".el" ".ini" ".cfg" ".cnf"))
 
-;; line numbers
-(global-linum-mode t)
 
 ;; cycle through buffers with Ctrl-Tab / Ctrl-Shift-Tab
 (global-set-key (kbd "<C-tab>") 'bury-buffer)
 (global-set-key (kbd "<C-S-iso-lefttab>") 'unbury-buffer)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key [(shift f1)] 'call-last-kbd-macro)
-(define-key global-map "\C-h" 'backward-delete-char) 
+
 
