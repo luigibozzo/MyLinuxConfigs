@@ -1,12 +1,12 @@
 [submodule ".emacs.d/haskell-mode"]
 	path = .emacs.d/haskell-mode
-	url = git://github.com/haskell/haskell-mode.git
+	url = http://github.com/haskell/haskell-mode.git
 [submodule ".emacs.d/expand-region"]
 	path = .emacs.d/expand-region
-	url = https://github.com/magnars/expand-region.el
+	url = http://github.com/magnars/expand-region.el
 [submodule ".emacs.d/ghc-mod"]
 	path = .emacs.d/ghc-mod
-	url = git://github.com/kazu-yamamoto/ghc-mod.git
+	url = http://github.com/kazu-yamamoto/ghc-mod.git
 [submodule ".emacs.d/clojure-mode"]
 	path = .emacs.d/clojure-mode
-	url = git://github.com/technomancy/clojure-mode.git
+	url = http://github.com/technomancy/clojure-mode.git
