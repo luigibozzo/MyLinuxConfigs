@@ -1,12 +1,19 @@
+;; git config  core.quotepath off
+;; git config  i18n.logoutputencoding utf8
+;; git config  i18n.commitencoding utf8
+;; git config  --unset svn.pathnameencoding
+
 ;; (add-to-list 'load-path "expand-region")
 ;; (load "expand-region")
 
 ;; (require 'expand-region)
 ;; (global-set-key (kbd "C-à") 'er/expand-region)
+;accenti con -nw
+(set-keyboard-coding-system 'iso-latin-1)
 
 (define-key global-map "\C-h" 'backward-delete-char) 
 
-(global-set-key (kbd "C-ò") '(lambda () ;; comment or uncomment current line/region
+(global-set-key (kbd "C-�") '(lambda () ;; comment or uncomment current line/region
   (interactive)
   (let (beg end)
 	(if (region-active-p)
