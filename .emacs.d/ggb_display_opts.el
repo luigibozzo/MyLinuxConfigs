@@ -1,6 +1,6 @@
 (setq-default inhibit-startup-screen t)
 
-;; hightlight symbol: http://nschum.de/src/emacs/highlight-symbol/
+;; hightlight symbol: http://nschum.de/src/emacs/highlight-symbol
 (require 'highlight-symbol)
 (global-set-key [(control f3)] 'highlight-symbol-at-point)
 (global-set-key [f3] 'highlight-symbol-next)
