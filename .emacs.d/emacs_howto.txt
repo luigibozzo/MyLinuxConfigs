@@ -1,0 +1,43 @@
+M-x load-file	reload your .emacs
+
+; moving
+C-f  forward one character
+M-f  forward one word
+C-b  backward one character
+M-b  backward one word
+C-n  donw one screen line
+M-n  scroll down
+C-p  up one screen line
+M-p  scroll up
+C-a  beginning of the line
+C-e  end of line
+M-<  top of the buffer
+M->  end of the buffer
+C-v  page down
+M-v  page up
+M-g g <line-number>	  goto line number
+M-m  first non-white space character of the line
+C-l  recenter
+
+; editing
+
+C-_ undo
+C-c d duplicate
+M-w copy
+C-y paste
+C-k cut line
+C-S-k cut line starting from the cursor position
+C-RET rectangular selection
+M-% replace ('y' to confirm, 'n' to skip, '!' for yes-to-all)
+C-space mark text
+C-x h  mark whole buffer
+M-u uppercase word
+M-l lowercase word
+M-d delete word forward
+M-del delete word backward
+
+
+C-x (	      start defining macro   
+C-x )	      stop defining macro
+C-x e	      execute macro
+C-u 42 C-x e  repeat macro 42 times
